@@ -48,6 +48,3 @@ function render(leads) {
       ulEl.innerHTML = listItems
 }
 
-function Popup() {
-   
-}
