@@ -12,16 +12,22 @@ function check() {
     if (nameEl.value === "") {
         document.getElementById("name").textContent = "*"
         messageError()
+    } else {
+        document.getElementById("name").textContent = " "
     }
 
     if (surnameEl.value === "")  {
         document.getElementById("surname").textContent = "*"
         messageError()
+    } else {
+        document.getElementById("surname").textContent = " "
     }
 
     if (dateEl.value === "") {
         document.getElementById("date").textContent = "*"
         messageError()
+    } else {
+        document.getElementById("date").textContent = " "
     }
 
     if (mailEl.value === "") {
@@ -30,6 +36,8 @@ function check() {
     }
     else if (!/^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mailEl.value)) {
         document.getElementById("mail").textContent = "Invalid Email!"
+    } else {
+        document.getElementById("mail").textContent = " "
     }
 
     if (passwEl.value === "") {
@@ -38,6 +46,8 @@ function check() {
     }
     else if (!/^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/.test(passwEl.value)) {
        document.getElementById("passw").textContent = "The password must be minimum 8 in length and contain atleast one uppercase letter, one lowercase letter, one number and one special character!"
+    } else {
+        document.getElementById("passw").textContent = " "
     }
 
     if (passwEl2.value === "") {
@@ -46,6 +56,8 @@ function check() {
     }
     else if (!passwEl.value.test(passwEl2.value)) {
         document.getElementById("passw2").textContent = "The password doesn't match with your given password!"
+    } else {
+        document.getElementById("passw2").textContent = " "
     }
 }
 
