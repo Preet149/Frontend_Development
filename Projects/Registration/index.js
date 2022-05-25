@@ -65,8 +65,4 @@ function messageError() {
         document.getElementById("error").textContent = "The field (*) must be filled!"
 }
     
-  
 
- 
-
-//Add some regex
