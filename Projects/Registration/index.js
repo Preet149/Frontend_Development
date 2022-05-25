@@ -1,14 +1,15 @@
 const mailEl = document.getElementById("mail-field")
 const passwEl = document.getElementById("passw-field")
-const passwEl2 = document.getElementById("passw-field2")
+const confirm = document.getElementById("passw-field2")
 const nameEl = document.getElementById("name-field")
 const surnameEl = document.getElementById("surname-field")
 const dateEl = document.getElementById("date-field")
 let count = 1
 
 
-function check() {
 
+
+function check() {
     if (nameEl.value === "") {
         document.getElementById("name").textContent = "*"
         messageError()
@@ -50,19 +51,17 @@ function check() {
         document.getElementById("passw").textContent = " "
     }
 
-    if (passwEl2.value === "") {
+    if (confirm.value === "") {
        document.getElementById("passw2").textContent = "*"
        messageError()
     }
-    else if (!passwEl.value.test(passwEl2.value)) { // Es gibt ein Problem mit dieser Selection.
-        document.getElementById("passw2").textContent = "The password doesn't match with your given password!"
-    } else {
+    else if (passwEl.value == confirm.value) { // Es gibt ein Problem mit dieser Selection.
         document.getElementById("passw2").textContent = " "
+    } else {
+        document.getElementById("passw2").textContent = "The password doesn't match with your given password!"
     }
 }
 
 function messageError() {
-        document.getElementById("error").textContent = "The field (*) must be filled!"
+        document.getElementById("error").textContent = "All the fields (*) must be filled!"
 }
-    
-
