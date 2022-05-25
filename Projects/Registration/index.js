@@ -62,6 +62,6 @@ function check() {
 }
 
 function messageError() {
-        document.getElementById("error").textContent = "The field (*) must be filled!"
+        document.getElementById("error").textContent = "All the field (*) must be filled!"
 }
     
