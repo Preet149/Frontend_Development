@@ -54,7 +54,7 @@ function check() {
        document.getElementById("passw2").textContent = "*"
        messageError()
     }
-    else if (!passwEl.value.test(passwEl2.value)) {
+    else if (!passwEl.value.test(passwEl2.value)) { // Es gibt ein Problem mit dieser Selection.
         document.getElementById("passw2").textContent = "The password doesn't match with your given password!"
     } else {
         document.getElementById("passw2").textContent = " "
