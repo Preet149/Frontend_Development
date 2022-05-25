@@ -55,7 +55,7 @@ function check() {
        document.getElementById("passw2").textContent = "*"
        messageError()
     }
-    else if (passwEl.value == confirm.value) { // Es gibt ein Problem mit dieser Selection.
+    else if (passwEl.value === confirm.value) { // Es gibt ein Problem mit dieser Selection.
         document.getElementById("passw2").textContent = " "
     } else {
         document.getElementById("passw2").textContent = "The password doesn't match with your given password!"
