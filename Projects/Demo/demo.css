@@ -24,3 +24,22 @@
     padding: 0.2%;
 }
 
+.grid-container {
+    width: 40px;
+    margin: 10px;
+    height: 300px;
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: space-evenly;
+}
+
+.grid-item {
+    font-size: 25px;
+    text-align: center;
+    width: 70px;
+    line-height: 40px;
+    margin: 10px;
+}
+
