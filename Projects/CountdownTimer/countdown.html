@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
-    <link rel="stylesheet" href="/CountdownTimer/countdown.css" type="text/css">
-    <link rel="icon" href="/CountdownTimer/Timer.jpg">
+    <link rel="stylesheet" href="countdown.css" type="text/css">
+    <link rel="icon" href="Timer.jpg">
 </head>
 <body>
     <h1>Countdown Timer</h1>
     <table>
         <tr>
-           <th>00</th>
-           <th>00</th>
-           <th>00</th>
+           <th id="hours">12</th>
+           <th id="minutes">30</th>
+           <th id="seconds">59</th>
         </tr> 
         <tr>
             <td><b>Hours</b></td>
@@ -22,6 +22,7 @@
             <td><b>Seconds</b></td>
         </tr>
     </table>
-    <button id="settimer-btn"><b>SetTimer</b></button> <button id="start-btn"><b>Start</b></button> <button id="pause-btn"><b>Pause</b></button> <button id="clear-btn"><b>Clear</b></button>
+    <button type="button" id="settimer-btn"><b>SetTimer</b></button> <button type="button" id="start-btn"><b>Start</b></button> <button type="button" id="pause-btn"><b>Pause</b></button> <button type="button" id="clear-btn" onclick="settoinitialstate()"><b>Clear</b></button>
+    <script src="countdown.js"></script>
 </body>
 </html>
