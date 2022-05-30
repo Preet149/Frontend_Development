@@ -15,3 +15,32 @@ td {
     padding-left: 35px;
     font-size: large;
 }
+
+#settimer-btn {
+    margin-top: 10px;
+    margin-left: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+#start-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+#pause-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+#clear-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
