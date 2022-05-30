@@ -2,6 +2,8 @@ table {
    margin-left: auto;
    margin-right: auto;
    padding-top: 220px;
+   border-spacing: 10px;
+   border-collapse: separate;
 }
 
 th {
