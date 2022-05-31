@@ -11,30 +11,105 @@ function settoinitialstate() {
    document.getElementById("seconds").textContent = "00"
 }
 
-function settimer() {
-       countersec2++
-
-       if (countersec2 > 9) {
-          countersec2 = 0
-          countersec1++
-
-          if (countersec1 + "" + countersec2 == 60) {
-                countermin2++
-                countersec1 = countersec2 = 0
-
-                if (countermin2 > 9) {
-                    countermin2 = 0
-                    countermin1++
-
-                    if (countermin1 + "" + countermin2 == 60) {
-                        counterhr2++
-                        countermin1 = countermin2 = 0
-                    }
-                }
+function decrementSeconds() {
+        countersec2--
+        if (countersec2 < 0) {
+            if (countersec1 > 0) {
+                countersec2 = 9
+                countersec1--
+            }
+            else {
+                countersec1 = 5
+                countersec2 = 9
+                decrementMinutes()
             }
         }
-       document.getElementById("seconds").textContent = countersec1 + "" + countersec2
-       document.getElementById("minutes").textContent = countermin1 + "" + countermin2
-       document.getElementById("hours").textContent = counterhr1 + "" + counterhr2
+        setCountdown()
 }
+
+function decrementMinutes() {
+    if (!(counterhr1 + "" + counterhr2).text("00") && !(countermin1 + "" + countermin2).text("00")) {
+        countermin2--
+        if (countermin2 < 0) {
+            if (countermin1 > 0) {
+                countermin2 = 9
+                countermin1--
+            } else {
+                countermin1 = 5
+                countermin2 = 9
+                decrementHours()
+            }
+        }
+    }
+    setCountdown()
+}
+
+function decrementHours() {
+     counterhr2--
+    if (counterhr2 < 0) {
+        if (counterhr1 > 0) {
+            counterhr1--
+            counterhr2 = 9
+        } else {
+            counterhr2 = 0
+        }
+    }
+    setCountdown()
+}
+
+function incrementSeconds() {
+    countersec2++
+    if (countersec2 > 9) {
+        countersec2 = 0
+        countersec1++
+
+        if (countersec1 + "" + countersec2 == 60) {
+           incrementMinutes()
+        }
+    }
+    setCountdown()
+}
+
+function incrementMinutes() {
+    if (countersec1 + "" + countersec2 == 60) {
+        countersec1 = countersec2 = 0
+    }
+    countermin2++
+    if (countermin2 > 9) {
+        countermin2 = 0
+        countermin1++
+
+        if (countermin1 + "" + countermin2 == 60) {
+            incrementHours()
+        }
+    }
+    setCountdown()
+}
+
+function incrementHours() {
+    if (countermin1 + "" + countermin2 == 60) {
+        countermin1 = countermin2 = 0
+    }
+    counterhr2++
+    if (counterhr2 > 9) {
+        counterhr1++
+        counterhr2 = 0
+    }
+    setCountdown()
+}
+
+function setCountdown() {
+    document.getElementById("seconds").textContent = countersec1 + "" + countersec2
+    document.getElementById("minutes").textContent = countermin1 + "" + countermin2
+    document.getElementById("hours").textContent = counterhr1 + "" + counterhr2
+}
+
+function checkTimer() {
+    if (counterhr1 + "" + counterhr2 + "" + countermin1 + "" + countermin2 + "" + countersec1 + "" + countersec2 == "000000") {
+
+    }
+}
+
+
+
 
