@@ -4,13 +4,33 @@ let countermin1 = 0
 let countermin2 = 0
 let counterhr1 = 0
 let counterhr2 = 0
+let pause = false
 //Sets the timer back to 00 00 00
 function settoinitialstate() {
    window.location.reload()
 }
 
+function pauseCountdown() {
+    if (pause === false) {
+        pause = true
+    } else {
+        pause = false
+    }
+}
+
+function startCountdown() {
+    setInterval(function(){
+        if (counterhr1 + "" + counterhr2 !== "00" || countermin1 + "" + countermin2 !== "00" || countersec1 + "" + countersec2 !== "00") {
+            if (!pause) {
+                setCountdown()
+                decrementSeconds()
+            }
+        }
+    },1000)
+}
+
 function decrementSeconds() {
-    if (countermin1 + "" + countermin2 !== "00" || countersec1 + "" + countersec2 !== "00" || counterhr1 + "" + counterhr2 !== "00") {
+    if (counterhr1 + "" + counterhr2 !== "00" || countermin1 + "" + countermin2 !== "00" || countersec1 + "" + countersec2 !== "00") {
         countersec2--
         if (countersec2 < 0) {
             if (countersec1 > 0) {
