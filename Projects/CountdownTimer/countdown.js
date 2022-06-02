@@ -19,12 +19,17 @@ function pauseCountdown() {
 }
 
 function startCountdown() {
-    setInterval(function(){
+
+    const stopinterval = setInterval(function(){
         if (counterhr1 + "" + counterhr2 !== "00" || countermin1 + "" + countermin2 !== "00" || countersec1 + "" + countersec2 !== "00") {
             if (!pause) {
                 setCountdown()
                 decrementSeconds()
             }
+        }else {
+            clearInterval(stopinterval)
+            const music = new Audio("CycleBellRing.mp3")
+            music.play()
         }
     },1000)
 }
