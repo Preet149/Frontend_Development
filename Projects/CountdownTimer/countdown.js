@@ -5,6 +5,7 @@ let countermin2 = 0
 let counterhr1 = 0
 let counterhr2 = 0
 let pause = false
+let changecolor = false
 //Sets the timer back to 00 00 00
 function settoinitialstate() {
    window.location.reload()
@@ -29,7 +30,20 @@ function startCountdown() {
         }else {
             clearInterval(stopinterval)
             const music = new Audio("CycleBellRing.mp3")
-            music.play()
+            music.play().then(r => 0)
+            const id = setInterval(function () {
+                if (!changecolor) {
+                    document.getElementById("hours").style.setProperty("color","black")
+                    document.getElementById("minutes").style.setProperty("color","black")
+                    document.getElementById("seconds").style.setProperty("color","black")
+                    changecolor = true
+                } else {
+                    document.getElementById("hours").style.setProperty("color","red")
+                    document.getElementById("minutes").style.setProperty("color","red")
+                    document.getElementById("seconds").style.setProperty("color","red")
+                    changecolor = false
+                }
+            },1000)
         }
     },1000)
 }
