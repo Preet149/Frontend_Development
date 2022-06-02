@@ -21,18 +21,9 @@ td {
     color: white;
 }
 
-#settimer-btn {
-    margin-top: 10px;
-    margin-left: 800px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    background-color: grey;
-    border-radius: 50px;
-}
-
 #start-btn {
     margin-top: 10px;
-    margin-left: 850px;
+    margin-left: 650px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     background-color: green;
@@ -76,7 +67,7 @@ h1 {
     color:whitesmoke;
     background-color: aqua;
     font-size: xxx-large;
-    margin-left: 720px;
+    margin-left: 520px;
     border-radius: 50px;
 }
 
