@@ -12,23 +12,24 @@ function settoinitialstate() {
 }
 
 function decrementSeconds() {
+    if (countermin1 + "" + countermin2 !== "00" || countersec1 + "" + countersec2 !== "00" || counterhr1 + "" + counterhr2 !== "00") {
         countersec2--
         if (countersec2 < 0) {
             if (countersec1 > 0) {
                 countersec2 = 9
                 countersec1--
-            }
-            else {
+            } else {
                 countersec1 = 5
                 countersec2 = 9
                 decrementMinutes()
             }
         }
         setCountdown()
+    }
 }
 
 function decrementMinutes() {
-    if (!(counterhr1 + "" + counterhr2).text("00") && !(countermin1 + "" + countermin2).text("00")) {
+    if (counterhr1 + "" + counterhr2 !== "00" || countermin1 + "" + countermin2 !== "00") {
         countermin2--
         if (countermin2 < 0) {
             if (countermin1 > 0) {
