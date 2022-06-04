@@ -21,20 +21,13 @@ td {
     color: white;
 }
 
-#settimer-btn {
-    margin-top: 10px;
-    margin-left: 800px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    background-color: grey;
-}
-
 #start-btn {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 650px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     background-color: green;
+    border-radius: 50px;
 }
 
 #pause-btn {
@@ -43,14 +36,16 @@ td {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     background-color: red;
+    border-radius: 50px;
 }
 
 #clear-btn {
-    margin-top: 10px;
+    margin-top: 40px;
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     background-color: bisque;
+    border-radius: 50px;
 }
 
 body {
@@ -58,9 +53,7 @@ body {
 }
 
 button {
-    
-    padding: 5px;
-    
+    padding: 10px;
 }
 
 h1 {
@@ -68,5 +61,55 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 80px;
     color: whitesmoke
+}
+
+#minus-hr-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 520px;
+    border-radius: 50px;
+}
+
+
+#plus-hr-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 30px;
+    border-radius: 50px;
+}
+
+#minus-min-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 60px;
+    border-radius: 50px;
+}
+
+#plus-min-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 30px;
+    border-radius: 50px;
+}
+
+#minus-sec-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 60px;
+    border-radius: 50px;
+}
+
+
+#plus-sec-btn {
+    color:whitesmoke;
+    background-color: aqua;
+    font-size: xxx-large;
+    margin-left: 30px;
+    border-radius: 50px;
 }
 
