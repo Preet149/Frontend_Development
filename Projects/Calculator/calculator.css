@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    margin-top: 100px;
+    border: black solid 2px;
+    padding: 20px;
+    background-color: black;
+}
+
+#digit-input-field {
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 90px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.row1-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    height: 70px;
+    width: 68px;
+    outline-style: initial;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.col4-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    height: 70px;
+    width: 68px;
+    outline-style: initial;
+    border-radius: 100px;
+    cursor: pointer;
+    color: white;
+    background-color: orange;
+}
+
+.row2-5btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    height: 70px;
+    width: 68px;
+    outline-style: initial;
+    border-radius: 100px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(60,60,60);
+}
+
+#zero-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    height: 70px;
+    width: 141px;
+    outline-style: initial;
+    border-radius: 100px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(60,60,60);
+}
