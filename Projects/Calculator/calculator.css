@@ -1,16 +1,31 @@
 body {
     text-align: center;
     margin-top: 100px;
-    border: black solid 2px;
     padding: 20px;
     background-color: black;
+}
+
+table {
+    border: 2px solid black;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    background-color: black;
+    margin-left: 600px;
+    padding-left: 220px;
+    border-color: white;
+}
+
+th {
+    color: white;
+    font-weight: lighter;
 }
 
 #digit-input-field {
     width: 300px;
     height: 100px;
     border-radius: 10px;
-    font-size: 90px;
+    font-size: 80px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     color: white;
@@ -73,4 +88,12 @@ body {
     cursor: pointer;
     color: white;
     background-color: rgb(60,60,60);
+}
+
+button {
+    transition: 0.1s;
+}
+
+button:active {
+    transform: scale(0.94)
 }
