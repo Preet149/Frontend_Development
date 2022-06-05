@@ -21,6 +21,14 @@ td {
     color: white;
 }
 
+button {
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
 #start-btn {
     margin-top: 10px;
     margin-left: 650px;
