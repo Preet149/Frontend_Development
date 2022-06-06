@@ -6,14 +6,13 @@ body {
 }
 
 table {
-    border: 2px solid black;
     font-size: 100px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
     background-color: black;
-    margin-left: 600px;
+    margin-left: 790px;
     padding-left: 220px;
-    border-color: white;
+    border: white solid 2px;
 }
 
 th {
