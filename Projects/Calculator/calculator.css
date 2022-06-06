@@ -17,6 +17,11 @@ th {
     font-weight: lighter;
 }
 
+td {
+    color: white;
+    font-weight: lighter;
+}
+
 #digit-input-field {
     width: 300px;
     height: 100px;
