@@ -8,11 +8,8 @@ body {
 table {
     font-size: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
     background-color: black;
     margin-left: 790px;
-    padding-left: 220px;
-    border: white solid 2px;
 }
 
 th {
