@@ -9,14 +9,17 @@
    <body>
        <table>
            <tr>
-               <th id="display-digit">0</th>
+               <th id="display-calculation"></th>
+           </tr>
+           <tr>
+               <td id="display-resultat">0</td>
            </tr>
        </table><br>
-       <button type="button" class="row1-btn" onclick="setToZero()">AC</button><button type="button" class="row1-btn">+/_</button><button type="button" class="row1-btn">%</button><button type="button" class="col4-btn">&#247;</button><br>
-       <button type="button" class="row2-5btn">7</button><button type="button" class="row2-5btn">8</button><button type="button" class="row2-5btn">9</button><button type="button" class="col4-btn">x</button><br>
-       <button type="button" class="row2-5btn">4</button><button type="button" class="row2-5btn">5</button><button type="button" class="row2-5btn">6</button><button type="button" class="col4-btn">-</button><br>
-       <button type="button" class="row2-5btn">1</button><button type="button" class="row2-5btn">2</button><button type="button" class="row2-5btn">3</button><button type="button" class="col4-btn">+</button><br>
-       <button type="button" id="zero-btn">0</button><button type="button" class="row2-5btn">.</button><button type="button" class="col4-btn">=</button>
+       <button type="button" class="row1-btn" onclick="setToZero()">AC</button><button type="button" class="row1-btn">+/_</button><button type="button" class="row1-btn" onclick="saveOperation('%')">%</button><button type="button" class="col4-btn" onclick="saveOperation('/')">&#247;</button><br>
+       <button type="button" class="row2-5btn" onclick="saveDigit(7)">7</button><button type="button" class="row2-5btn" onclick="saveDigit(8)">8</button><button type="button" class="row2-5btn" onclick="saveDigit(9)">9</button><button type="button" class="col4-btn" onclick="saveOperation('x')">x</button><br>
+       <button type="button" class="row2-5btn" onclick="saveDigit(4)">4</button><button type="button" class="row2-5btn" onclick="saveDigit(5)">5</button><button type="button" class="row2-5btn" onclick="saveDigit(6)">6</button><button type="button" class="col4-btn" onclick="saveOperation('-')">-</button><br>
+       <button type="button" class="row2-5btn" onclick="saveDigit(1)">1</button><button type="button" class="row2-5btn" onclick="saveDigit(2)">2</button><button type="button" class="row2-5btn" onclick="saveDigit(3)">3</button><button type="button" class="col4-btn" onclick="saveOperation('+')">+</button><br>
+       <button type="button" id="zero-btn" onclick="saveDigit(0)">0</button><button type="button" class="row2-5btn">.</button><button type="button" class="col4-btn">=</button>
    </body>
    <script src="calculator.js"></script>
 </html>
