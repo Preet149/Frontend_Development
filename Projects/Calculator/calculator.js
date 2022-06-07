@@ -26,35 +26,34 @@ function saveOperation(operation) {
                      break
           case '+' : operations.push(operation)
                      break
+          case '/' : operations.push(operation)
+                     break
           default:
      }
      saveCurrentValue()
 }
 
+function setActualResult() {
+    if (operations[0] === '+') {
+        actualresult = Number(history[0]) + Number(history[1])
+    } else if (operations[0] === '-') {
+        actualresult = Number(history[0]) - Number(history[1])
+    } else if (operations[0] === 'x') {
+        actualresult = Number(history[0]) * Number(history[1])
+    } else if (operations[0] === '/') {
+        actualresult = Number(history[0]) / Number(history[1])
+    }
+    return actualresult
+}
+
 function saveCurrentValue() {
      if (history.length === 2) {
-         if (operations[0] === '+') {
-             actualresult = Number(history[0]) + Number(history[1])
-             operations.shift()
-             calculation = actualresult + " " + operations[0] + " "
-             history.push(actualresult)
-             history.shift()
-             history.shift()
-         } else if (operations[0] === '-') {
-             actualresult = Number(history[0]) - Number(history[1])
-             operations.shift()
-             calculation = actualresult + " " + operations[0] + " "
-             history.push(actualresult)
-             history.shift()
-             history.shift()
-         } else if (operations[0] === 'x') {
-             actualresult = Number(history[0]) * Number(history[1])
-             operations.shift()
-             calculation = actualresult + " " + operations[0] + " "
-             history.push(actualresult)
-             history.shift()
-             history.shift()
-         }
+         setActualResult()
+         operations.shift()
+         calculation = actualresult + " " + operations[0] + " "
+         history.push(actualresult)
+         history.shift()
+         history.shift()
      } else {
          calculation += " " + operations[0] + " "
      }
@@ -70,7 +69,7 @@ function changeSign() {
 }
 
 function equalTo() {
-    actualresult = Number(history[0]) + Number(history[1])
+    setActualResult()
     calculation += " = " + actualresult
     displayCalculation()
     displayResult()
