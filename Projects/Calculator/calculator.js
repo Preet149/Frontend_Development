@@ -68,6 +68,12 @@ function changeSign() {
     displayCalculation()
 }
 
+function convertToDecimal() {
+    tmp += ","
+    calculation = tmp
+    displayCalculation()
+}
+
 function equalTo() {
     setActualResult()
     calculation += " = " + actualresult
