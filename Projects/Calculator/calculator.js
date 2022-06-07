@@ -8,11 +8,10 @@ let history = []
 function saveDigit(digit) {
    if (tmp === " ") {
         tmp = buttons[digit]
-        calculation += buttons[digit]
    } else {
         tmp += "" + buttons[digit]
-        calculation += buttons[digit]
    }
+   calculation += buttons[digit]
    history.push(tmp)
    displayCalculation()
 }
