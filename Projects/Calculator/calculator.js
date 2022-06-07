@@ -1,16 +1,20 @@
-let currentvalue = 0
+let tmp = ""
 let calculation = ""
+let actualresult = 0
 let operations = []
 let buttons = [0,1,2,3,4,5,6,7,8,9]
 let history = []
 
 function saveDigit(digit) {
-   if (currentvalue === 0) {
-        currentvalue = buttons[digit]
+   if (tmp === " ") {
+        tmp = buttons[digit]
+        calculation += buttons[digit]
    } else {
-        currentvalue += "" + buttons[digit]
+        tmp += "" + buttons[digit]
+        calculation += buttons[digit]
    }
-   displayDigits()
+   history.push(tmp)
+   displayCalculation()
 }
 
 function saveOperation(operation) {
@@ -29,16 +33,58 @@ function saveOperation(operation) {
 }
 
 function saveCurrentValue() {
-     history.push(currentvalue)
-     currentvalue = 0
-     //Mit Stack arbeiten
+     if (history.length === 2) {
+         if (operations[0] === '+') {
+             actualresult = Number(history[0]) + Number(history[1])
+             operations.shift()
+             calculation = actualresult + " " + operations[0] + " "
+             history.push(actualresult)
+             history.shift()
+             history.shift()
+         } else if (operations[0] === '-') {
+             actualresult = Number(history[0]) - Number(history[1])
+             operations.shift()
+             calculation = actualresult + " " + operations[0] + " "
+             history.push(actualresult)
+             history.shift()
+             history.shift()
+         } else if (operations[0] === 'x') {
+             actualresult = Number(history[0]) * Number(history[1])
+             operations.shift()
+             calculation = actualresult + " " + operations[0] + " "
+             history.push(actualresult)
+             history.shift()
+             history.shift()
+         }
+     } else {
+         calculation += " " + operations[0] + " "
+     }
+    tmp = ""
+    displayCalculation()
+    displayResult()
 }
 
-function displayDigits() {
-     document.getElementById("display-resultat").textContent = currentvalue
+function changeSign() {
+    tmp = Number(tmp) * -1
+    calculation = tmp
+    displayCalculation()
+}
+
+function equalTo() {
+    actualresult = Number(history[0]) + Number(history[1])
+    calculation += " = " + actualresult
+    displayCalculation()
+    displayResult()
+}
+
+function displayResult() {
+    document.getElementById("display-result").textContent = JSON.stringify(actualresult)
+}
+
+function displayCalculation() {
+     document.getElementById("display-calculation").textContent = calculation
 }
 
 function setToZero() {
-     currentvalue = 0
-     window.location.reload()
+    window.location.reload()
 }
