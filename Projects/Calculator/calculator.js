@@ -11,12 +11,14 @@ function saveDigit(digit) {
    } else {
         tmp += "" + buttons[digit]
    }
-   calculation += buttons[digit]
-   history.push(tmp)
+   calculation += "" + buttons[digit]
    displayCalculation()
 }
 
 function saveOperation(operation) {
+    if (operations.length === 1) {
+         history.push(tmp)
+    }
      switch(operation) {
           case '%' : operations.push(operation)
                      break
@@ -30,10 +32,11 @@ function saveOperation(operation) {
                      break
           default:
      }
+
      saveCurrentValue()
 }
 
-function setActualResult() {
+function getActualResult() {
     if (operations[0] === '+') {
         actualresult = Number(history[0]) + Number(history[1])
     } else if (operations[0] === '-') {
@@ -48,23 +51,32 @@ function setActualResult() {
 
 function saveCurrentValue() {
      if (history.length === 2) {
-         setActualResult()
+         getActualResult()
          operations.shift()
          calculation = actualresult + " " + operations[0] + " "
          history.push(actualresult)
          history.shift()
          history.shift()
      } else {
-         calculation += " " + operations[0] + " "
+         if (tmp === " ") {
+             calculation += operations[0]
+         } else {
+             calculation += " " + operations[0] + " "
+             tmp = " "
+         }
      }
-    tmp = ""
     displayCalculation()
     displayResult()
 }
 
 function changeSign() {
     tmp = Number(tmp) * -1
-    calculation = tmp
+    if (history.length === 0) {
+        calculation = tmp
+    } else {
+
+    }
+    history[0] *= -1
     displayCalculation()
 }
 
@@ -75,7 +87,8 @@ function convertToDecimal() {
 }
 
 function equalTo() {
-    setActualResult()
+    history.push(tmp)
+    getActualResult()
     calculation += " = " + actualresult
     displayCalculation()
     displayResult()
