@@ -8,7 +8,7 @@ function returnToHomePage() {
     window.location.href="homepage.html"
 }
 
-function setCross() {
+function setCrossOnField() {
     let pos = document.getElementById("position").value
 
     if(pos === "top-left") {
@@ -113,11 +113,11 @@ function setCross() {
     }
 
     if(callfunction) {
-        setRandomZero()
+        setRandomZeroOnField()
     }
 }
 
-function setRandomZero() {
+function setRandomZeroOnField() {
     setTimeout(function () {
         const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
         const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
@@ -128,7 +128,7 @@ function setRandomZero() {
                 document.getElementById("top-left").textContent = "0 "
             } else {
                 callError("top-left")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "01") {
             if (checkField(document.getElementById("top"))) {
@@ -136,7 +136,7 @@ function setRandomZero() {
                 document.getElementById("top").textContent = "0 "
             } else {
                 callError("top")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "02") {
             if (checkField(document.getElementById("top-right"))) {
@@ -144,7 +144,7 @@ function setRandomZero() {
                 document.getElementById("top-right").textContent = "0 "
             } else {
                 callError("top-right")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "10") {
             if (checkField(document.getElementById("middle-left"))) {
@@ -152,7 +152,7 @@ function setRandomZero() {
                 document.getElementById("middle-left").textContent = "0 "
             } else {
                 callError("middle-left")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "11") {
             if (checkField(document.getElementById("middle"))) {
@@ -160,7 +160,7 @@ function setRandomZero() {
                 document.getElementById("middle").textContent = "0 "
             } else {
                 callError("middle")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "12") {
             if (checkField(document.getElementById("middle-right"))) {
@@ -168,7 +168,7 @@ function setRandomZero() {
                 document.getElementById("middle-right").textContent = "0 "
             } else {
                 callError("middle-right")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "20") {
             if (checkField(document.getElementById("bottom-left"))) {
@@ -176,7 +176,7 @@ function setRandomZero() {
                 document.getElementById("bottom-left").textContent = "0 "
             } else {
                 callError("bottom-left")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "21") {
             if (checkField(document.getElementById("bottom"))) {
@@ -184,7 +184,7 @@ function setRandomZero() {
                 document.getElementById("bottom").textContent = "0 "
             } else {
                 callError("bottom")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         } else if(indexvalue1 + indexvalue2 === "22") {
             if (checkField(document.getElementById("bottom-right"))) {
@@ -192,7 +192,7 @@ function setRandomZero() {
                 document.getElementById("bottom-right").textContent = "0 "
             } else {
                 callError("bottom-right")
-                setRandomZero()
+                setRandomZeroOnField()
             }
         }
     },5000)
