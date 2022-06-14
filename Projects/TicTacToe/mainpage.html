@@ -9,26 +9,28 @@
     <h1 id="p-vs-c">Player V/S <span>Computer</span></h1>
     <table>
         <tr>
-            <td>00</td>
-            <td>00</td>
-            <td>00</td>
+            <td id="top-left">00</td>
+            <td id="top">00</td>
+            <td id="top-right">00</td>
         </tr>
         <tr>
-            <td>00</td>
-            <td>00</td>
-            <td>00</td>
+            <td id="middle-left">00</td>
+            <td id="middle">00</td>
+            <td id="middle-right">00</td>
         </tr>
         <tr>
-            <td>00</td>
-            <td>00</td>
-            <td>00</td>
+            <td id="bottom-left">00</td>
+            <td id="bottom">00</td>
+            <td id="bottom-right">00</td>
         </tr>
     </table>
+    <p id="error"></p>
     <div>
-        <label id="label" for="Position">Enter the position:</label><br>
-        <input type="text" id="Position"><br>
-        <button id="your-turn-btn">Your turn</button><button id="exit-game-btn" onclick="returnToHomePage()">Exit game</button>
+        <label id="label" for="position">Enter the position:</label><br>
+        <input type="text" id="position"><br>
+        <button id="your-turn-btn" onclick="setCross()">Your turn</button><button id="exit-game-btn" onclick="returnToHomePage()">Exit game</button>
     </div>
 </body>
 <script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 </html>
