@@ -1,4 +1,6 @@
 let callfunction = false
+let playerturns = 0
+let computerturns = 0
 
 function switchToNextPage() {
     window.location.href="mainpage.html"
@@ -15,6 +17,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top-left"))) {
             document.getElementById("top-left").style.setProperty("visibility","visible")
             document.getElementById("top-left").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -26,6 +30,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top"))) {
             document.getElementById("top").style.setProperty("visibility","visible")
             document.getElementById("top").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -37,6 +43,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top-right"))) {
             document.getElementById("top-right").style.setProperty("visibility","visible")
             document.getElementById("top-right").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -48,6 +56,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle-left"))) {
             document.getElementById("middle-left").style.setProperty("visibility","visible")
             document.getElementById("middle-left").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -59,6 +69,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle"))) {
             document.getElementById("middle").style.setProperty("visibility","visible")
             document.getElementById("middle").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -70,6 +82,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle-right"))) {
             document.getElementById("middle-right").style.setProperty("visibility","visible")
             document.getElementById("middle-right").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -81,6 +95,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom-left"))) {
             document.getElementById("bottom-left").style.setProperty("visibility","visible")
             document.getElementById("bottom-left").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -92,6 +108,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom"))) {
             document.getElementById("bottom").style.setProperty("visibility","visible")
             document.getElementById("bottom").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -103,6 +121,8 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom-right"))) {
             document.getElementById("bottom-right").style.setProperty("visibility","visible")
             document.getElementById("bottom-right").textContent = "X "
+            playerturns++
+            declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
             callfunction = true
         } else {
@@ -126,6 +146,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top-left"))) {
                 document.getElementById("top-left").style.setProperty("visibility","visible")
                 document.getElementById("top-left").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("top-left")
                 setRandomZeroOnField()
@@ -134,6 +156,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top"))) {
                 document.getElementById("top").style.setProperty("visibility","visible")
                 document.getElementById("top").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("top")
                 setRandomZeroOnField()
@@ -142,6 +166,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top-right"))) {
                 document.getElementById("top-right").style.setProperty("visibility","visible")
                 document.getElementById("top-right").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("top-right")
                 setRandomZeroOnField()
@@ -150,6 +176,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("middle-left"))) {
                 document.getElementById("middle-left").style.setProperty("visibility","visible")
                 document.getElementById("middle-left").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("middle-left")
                 setRandomZeroOnField()
@@ -158,6 +186,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("middle"))) {
                 document.getElementById("middle").style.setProperty("visibility","visible")
                 document.getElementById("middle").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("middle")
                 setRandomZeroOnField()
@@ -174,6 +204,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom-left"))) {
                 document.getElementById("bottom-left").style.setProperty("visibility","visible")
                 document.getElementById("bottom-left").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("bottom-left")
                 setRandomZeroOnField()
@@ -182,6 +214,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom"))) {
                 document.getElementById("bottom").style.setProperty("visibility","visible")
                 document.getElementById("bottom").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("bottom")
                 setRandomZeroOnField()
@@ -190,6 +224,8 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom-right"))) {
                 document.getElementById("bottom-right").style.setProperty("visibility","visible")
                 document.getElementById("bottom-right").textContent = "0 "
+                computerturns++
+                declareWinner(playerturns, computerturns)
             } else {
                 callError("bottom-right")
                 setRandomZeroOnField()
@@ -213,4 +249,10 @@ function callError(pos) {
             changecolor = false
         }
     },1000)
+}
+
+function declareWinner(playerturns,computerturns) {
+        if (playerturns > 2 && computerturns > 2) {
+            //ToDo: Implement the logic for declaring the winner of the game
+        }
 }
