@@ -36,42 +36,66 @@ function setRandomZero() {
     const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
     const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
 
-    switch (indexvalue1 + indexvalue2) {
-
-        case "00":
-            document.getElementById("top-left").textContent = checkField(document.getElementById("top-left"))
-            break;
-        case "01":
-            document.getElementById("top").textContent = checkField(document.getElementById("top"))
-            break;
-        case "02":
-            document.getElementById("top-right").textContent = checkField(document.getElementById("top-right"))
-            break;
-        case "10":
-            document.getElementById("middle-left").textContent = checkField(document.getElementById("middle-left"))
-            break;
-        case "11":
-            document.getElementById("middle").textContent = checkField(document.getElementById("middle"))
-            break;
-        case "12":
-            document.getElementById("middle-right").textContent = checkField(document.getElementById("middle-right"))
-            break;
-        case "20":
-            document.getElementById("bottom-left").textContent = checkField(document.getElementById("bottom-left"))
-            break;
-        case "21":
-            document.getElementById("bottom").textContent = checkField(document.getElementById("bottom"))
-            break;
-        case "22":
-            document.getElementById("bottom-right").textContent = checkField(document.getElementById("bottom-right"))
-            break;
+    if(indexvalue1 + indexvalue2 === "00") {
+        if (checkField(document.getElementById("top-left"))) {
+            document.getElementById("top-left").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "01") {
+        if (checkField(document.getElementById("top"))) {
+            document.getElementById("top").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "02") {
+        if (checkField(document.getElementById("top-right"))) {
+            document.getElementById("top-right").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "10") {
+        if (checkField(document.getElementById("middle-left"))) {
+            document.getElementById("middle-left").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "11") {
+        if (checkField(document.getElementById("middle"))) {
+            document.getElementById("middle").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "12") {
+        if (checkField(document.getElementById("middle-right"))) {
+            document.getElementById("middle-right").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "20") {
+        if (checkField(document.getElementById("bottom-left"))) {
+            document.getElementById("bottom-left").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "21") {
+        if (checkField(document.getElementById("bottom"))) {
+            document.getElementById("bottom").textContent = "0"
+        } else {
+            setRandomZero()
+        }
+    } else if(indexvalue1 + indexvalue2 === "22") {
+        if (checkField(document.getElementById("bottom-right"))) {
+            document.getElementById("bottom-right").textContent = "0"
+        } else {
+            setRandomZero()
+        }
     }
 }
 
 function checkField(param) {
      if(param.innerHTML === "X" || param.innerHTML === "O") {
-         setRandomZero()
-     } else {
-         return "O"
+         return false
      }
+     return true
 }
