@@ -33,64 +33,68 @@ function setCross() {
 }
 
 function setRandomZero() {
-    const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
-    const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
+    setTimeout(function () {
+        const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
+        const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
 
-    if(indexvalue1 + indexvalue2 === "00") {
-        if (checkField(document.getElementById("top-left"))) {
-            document.getElementById("top-left").textContent = "0"
-        } else {
-            setRandomZero()
+        document.getElementById("index").textContent = indexvalue1 + indexvalue2
+
+        if(indexvalue1 + indexvalue2 === "00") {
+            if (checkField(document.getElementById("top-left"))) {
+                document.getElementById("top-left").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "01") {
+            if (checkField(document.getElementById("top"))) {
+                document.getElementById("top").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "02") {
+            if (checkField(document.getElementById("top-right"))) {
+                document.getElementById("top-right").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "10") {
+            if (checkField(document.getElementById("middle-left"))) {
+                document.getElementById("middle-left").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "11") {
+            if (checkField(document.getElementById("middle"))) {
+                document.getElementById("middle").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "12") {
+            if (checkField(document.getElementById("middle-right"))) {
+                document.getElementById("middle-right").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "20") {
+            if (checkField(document.getElementById("bottom-left"))) {
+                document.getElementById("bottom-left").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "21") {
+            if (checkField(document.getElementById("bottom"))) {
+                document.getElementById("bottom").textContent = "0"
+            } else {
+                setRandomZero()
+            }
+        } else if(indexvalue1 + indexvalue2 === "22") {
+            if (checkField(document.getElementById("bottom-right"))) {
+                document.getElementById("bottom-right").textContent = "0"
+            } else {
+                setRandomZero()
+            }
         }
-    } else if(indexvalue1 + indexvalue2 === "01") {
-        if (checkField(document.getElementById("top"))) {
-            document.getElementById("top").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "02") {
-        if (checkField(document.getElementById("top-right"))) {
-            document.getElementById("top-right").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "10") {
-        if (checkField(document.getElementById("middle-left"))) {
-            document.getElementById("middle-left").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "11") {
-        if (checkField(document.getElementById("middle"))) {
-            document.getElementById("middle").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "12") {
-        if (checkField(document.getElementById("middle-right"))) {
-            document.getElementById("middle-right").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "20") {
-        if (checkField(document.getElementById("bottom-left"))) {
-            document.getElementById("bottom-left").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "21") {
-        if (checkField(document.getElementById("bottom"))) {
-            document.getElementById("bottom").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    } else if(indexvalue1 + indexvalue2 === "22") {
-        if (checkField(document.getElementById("bottom-right"))) {
-            document.getElementById("bottom-right").textContent = "0"
-        } else {
-            setRandomZero()
-        }
-    }
+    },5000)
 }
 
 function checkField(param) {
