@@ -1,6 +1,7 @@
 let callfunction = false
 let playerturns = 0
 let computerturns = 0
+let gamefield = [["","",""],["","",""],["","",""]]
 
 function switchToNextPage() {
     window.location.href="mainpage.html"
@@ -17,6 +18,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top-left"))) {
             document.getElementById("top-left").style.setProperty("visibility","visible")
             document.getElementById("top-left").textContent = "X "
+            setSymbolOnPos("top-left","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -30,6 +32,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top"))) {
             document.getElementById("top").style.setProperty("visibility","visible")
             document.getElementById("top").textContent = "X "
+            setSymbolOnPos("top","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -43,6 +46,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("top-right"))) {
             document.getElementById("top-right").style.setProperty("visibility","visible")
             document.getElementById("top-right").textContent = "X "
+            setSymbolOnPos("top-right","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -56,6 +60,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle-left"))) {
             document.getElementById("middle-left").style.setProperty("visibility","visible")
             document.getElementById("middle-left").textContent = "X "
+            setSymbolOnPos("middle-left","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -69,6 +74,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle"))) {
             document.getElementById("middle").style.setProperty("visibility","visible")
             document.getElementById("middle").textContent = "X "
+            setSymbolOnPos("middle","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -82,6 +88,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("middle-right"))) {
             document.getElementById("middle-right").style.setProperty("visibility","visible")
             document.getElementById("middle-right").textContent = "X "
+            setSymbolOnPos("middle-right","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -95,6 +102,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom-left"))) {
             document.getElementById("bottom-left").style.setProperty("visibility","visible")
             document.getElementById("bottom-left").textContent = "X "
+            setSymbolOnPos("bottom-left","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -108,6 +116,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom"))) {
             document.getElementById("bottom").style.setProperty("visibility","visible")
             document.getElementById("bottom").textContent = "X "
+            setSymbolOnPos("bottom","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -121,6 +130,7 @@ function setCrossOnField() {
         if (checkField(document.getElementById("bottom-right"))) {
             document.getElementById("bottom-right").style.setProperty("visibility","visible")
             document.getElementById("bottom-right").textContent = "X "
+            setSymbolOnPos("bottom-right","X")
             playerturns++
             declareWinner(playerturns, computerturns)
             document.getElementById("error").textContent = ""
@@ -138,7 +148,7 @@ function setCrossOnField() {
 }
 
 function setRandomZeroOnField() {
-    setTimeout(function () {
+    /*setTimeout(function () {
         const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
         const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
 
@@ -146,6 +156,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top-left"))) {
                 document.getElementById("top-left").style.setProperty("visibility","visible")
                 document.getElementById("top-left").textContent = "0 "
+                setSymbolOnPos("top-left","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -156,6 +167,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top"))) {
                 document.getElementById("top").style.setProperty("visibility","visible")
                 document.getElementById("top").textContent = "0 "
+                setSymbolOnPos("top","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -166,6 +178,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("top-right"))) {
                 document.getElementById("top-right").style.setProperty("visibility","visible")
                 document.getElementById("top-right").textContent = "0 "
+                setSymbolOnPos("top-right","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -176,6 +189,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("middle-left"))) {
                 document.getElementById("middle-left").style.setProperty("visibility","visible")
                 document.getElementById("middle-left").textContent = "0 "
+                setSymbolOnPos("middle-left","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -186,6 +200,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("middle"))) {
                 document.getElementById("middle").style.setProperty("visibility","visible")
                 document.getElementById("middle").textContent = "0 "
+                setSymbolOnPos("middle","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -196,6 +211,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("middle-right"))) {
                 document.getElementById("middle-right").style.setProperty("visibility","visible")
                 document.getElementById("middle-right").textContent = "0 "
+                setSymbolOnPos("middle-right","0")
             } else {
                 callError("middle-right")
                 setRandomZeroOnField()
@@ -204,6 +220,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom-left"))) {
                 document.getElementById("bottom-left").style.setProperty("visibility","visible")
                 document.getElementById("bottom-left").textContent = "0 "
+                setSymbolOnPos("bottom-left","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -214,6 +231,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom"))) {
                 document.getElementById("bottom").style.setProperty("visibility","visible")
                 document.getElementById("bottom").textContent = "0 "
+                setSymbolOnPos("bottom","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -224,6 +242,7 @@ function setRandomZeroOnField() {
             if (checkField(document.getElementById("bottom-right"))) {
                 document.getElementById("bottom-right").style.setProperty("visibility","visible")
                 document.getElementById("bottom-right").textContent = "0 "
+                setSymbolOnPos("bottom-right","0")
                 computerturns++
                 declareWinner(playerturns, computerturns)
             } else {
@@ -231,7 +250,7 @@ function setRandomZeroOnField() {
                 setRandomZeroOnField()
             }
         }
-    },5000)
+    },5000)*/
 }
 
 function checkField(param) {
@@ -252,7 +271,127 @@ function callError(pos) {
 }
 
 function declareWinner(playerturns,computerturns) {
-        if (playerturns > 2 && computerturns > 2) {
-            //ToDo: Implement the logic for declaring the winner of the game
+        let winner = " "
+        let fields = []
+        if (playerturns > 2 || computerturns > 2) {
+            alert("True")
+            //Checking vertically
+            if (gamefield[0][0] === gamefield[0][1] && gamefield[0][1] === gamefield[0][2]) {
+                alert("1st row")
+                if (gamefield[0][0] === "X") {
+                    winner = "Player"
+                    fields = ["top-left","top","top-right"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top-left","top","top-right"]
+                }
+            } else if (gamefield[1][0] === gamefield[1][1] && gamefield[1][1] === gamefield[1][2]) {
+                alert("2nd row")
+                if (gamefield[1][0] === "X") {
+                    winner = "Player"
+                    fields = ["middle-left","middle","middle-right"]
+                } else {
+                    winner = "Computer"
+                    fields = ["middle-left","middle","middle-right"]
+                }
+            } else if (gamefield[2][0] === gamefield[2][1] && gamefield[2][1] === gamefield[2][2]) {
+                alert("True2")
+                if (gamefield[2][0] === "X") {
+                    alert("Entered")
+                    winner = "Player"
+                    fields = ["bottom-left","bottom","bottom-right"]
+                } else {
+                    winner = "Computer"
+                    fields = ["bottom-left","bottom","bottom-right"]
+                }
+            }
+            //Checking horizontally
+            if (gamefield[0][0] === gamefield[1][0] && gamefield[1][0] === gamefield[2][0]) {
+                if (gamefield[0][0] === "X") {
+                    winner = "Player"
+                    fields = ["top-left","middle-left","bottom-left"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top-left","middle-left","bottom-left"]
+                }
+            } else if (gamefield[0][1] === gamefield[1][1] && gamefield[1][1] === gamefield[2][1]) {
+                if (gamefield[0][1] === "X") {
+                    winner = "Player"
+                    fields = ["top","middle","bottom"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top","middle","bottom"]
+                }
+            } else if (gamefield[0][2] === gamefield[1][2] && gamefield[1][2] === gamefield[2][2]) {
+                if (gamefield[0][2] === "X") {
+                    winner = "Player"
+                    fields = ["top-right","middle-right","bottom-right"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top-right","middle-right","bottom-right"]
+                }
+            }
+            //Checking Diagonally
+            if (gamefield[0][0] === gamefield[1][1] && gamefield[1][1] === gamefield[2][2]) {
+                if (gamefield[0][0] === "X") {
+                    winner = "Player"
+                    fields = ["top-left","middle","bottom-right"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top-left","middle","bottom-right"]
+                }
+            } else if (gamefield[0][2] === gamefield[1][1] && gamefield[1][1] === gamefield[0][2]) {
+                if (gamefield[0][2] === "X") {
+                    winner = "Player"
+                    fields = ["top-right","middle","bottom-left"]
+                } else {
+                    winner = "Computer"
+                    fields = ["top-right","middle","bottom-left"]
+                }
+            }
+        }
+        if(winner !== " ") {
+            showWinnerOnPage(winner, fields)
         }
 }
+
+function showWinnerOnPage(winner, fields) {
+    document.getElementById(fields[0]).style.setProperty("background-color","green")
+    document.getElementById(fields[1]).style.setProperty("background-color","green")
+    document.getElementById(fields[2]).style.setProperty("background-color","green")
+}
+
+function setSymbolOnPos(pos,symbol) {
+    switch (pos) {
+        case "top-left":
+            gamefield[0][0] = symbol
+            break
+        case "top":
+            gamefield[0][1] = symbol
+            break
+        case "top-right":
+            gamefield[0][2] = symbol
+            break
+        case "middle-left":
+            gamefield[1][0] = symbol
+            break
+        case "middle":
+            gamefield[1][1] = symbol
+            break
+        case "middle-right":
+            gamefield[1][2] = symbol
+            break
+        case "bottom-left":
+            gamefield[2][0] = symbol
+            break
+        case "bottom":
+            gamefield[2][1] = symbol
+            break
+        case "bottom-right":
+            gamefield[2][2] = symbol
+            break
+        default :
+            break
+    }
+}
+
