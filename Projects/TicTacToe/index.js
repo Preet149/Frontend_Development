@@ -148,7 +148,7 @@ function setCrossOnField() {
 }
 
 function setRandomZeroOnField() {
-    /*setTimeout(function () {
+    setTimeout(function () {
         const indexvalue1 = JSON.stringify(Math.floor(Math.random() * 3))
         const indexvalue2 = JSON.stringify(Math.floor(Math.random() * 3))
 
@@ -250,7 +250,7 @@ function setRandomZeroOnField() {
                 setRandomZeroOnField()
             }
         }
-    },5000)*/
+    },5000)
 }
 
 function checkField(param) {
@@ -274,79 +274,93 @@ function declareWinner(playerturns,computerturns) {
         let winner = " "
         let fields = []
         if (playerturns > 2 || computerturns > 2) {
-            alert("True")
             //Checking vertically
-            if (gamefield[0][0] === gamefield[0][1] && gamefield[0][1] === gamefield[0][2]) {
-                alert("1st row")
-                if (gamefield[0][0] === "X") {
-                    winner = "Player"
-                    fields = ["top-left","top","top-right"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top-left","top","top-right"]
+            alert(vertical)
+            if (gamefield[0][0] === "X" || gamefield[0][0] === "0") {//1st row
+                if (gamefield[0][0] === gamefield[0][1] && gamefield[0][1] === gamefield[0][2]) {
+                    if (gamefield[0][0] === "X") {
+                        winner = "Player"
+                        fields = ["top-left","top","top-right"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top-left","top","top-right"]
+                    }
                 }
-            } else if (gamefield[1][0] === gamefield[1][1] && gamefield[1][1] === gamefield[1][2]) {
-                alert("2nd row")
-                if (gamefield[1][0] === "X") {
-                    winner = "Player"
-                    fields = ["middle-left","middle","middle-right"]
-                } else {
-                    winner = "Computer"
-                    fields = ["middle-left","middle","middle-right"]
+            } else if (gamefield[1][0] === "X" || gamefield[1][0] === "0") {//2nd row
+                if (gamefield[1][0] === gamefield[1][1] && gamefield[1][1] === gamefield[1][2]) {
+                    if (gamefield[1][0] === "X") {
+                        winner = "Player"
+                        fields = ["middle-left","middle","middle-right"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["middle-left","middle","middle-right"]
+                    }
                 }
-            } else if (gamefield[2][0] === gamefield[2][1] && gamefield[2][1] === gamefield[2][2]) {
-                alert("True2")
-                if (gamefield[2][0] === "X") {
-                    alert("Entered")
-                    winner = "Player"
-                    fields = ["bottom-left","bottom","bottom-right"]
-                } else {
-                    winner = "Computer"
-                    fields = ["bottom-left","bottom","bottom-right"]
+            } else if (gamefield[2][0] === "X" || gamefield[2][0] === "0") { //3rd row
+                if (gamefield[2][0] === gamefield[2][1] && gamefield[2][1] === gamefield[2][2]) {
+                    if (gamefield[2][0] === "X") {
+                        winner = "Player"
+                        fields = ["bottom-left","bottom","bottom-right"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["bottom-left","bottom","bottom-right"]
+                    }
                 }
             }
             //Checking horizontally
-            if (gamefield[0][0] === gamefield[1][0] && gamefield[1][0] === gamefield[2][0]) {
-                if (gamefield[0][0] === "X") {
-                    winner = "Player"
-                    fields = ["top-left","middle-left","bottom-left"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top-left","middle-left","bottom-left"]
+            alert("horizon")
+            if (gamefield[0][0] === "X" || gamefield[0][0] === "0") {//1st column
+                if (gamefield[0][0] === gamefield[1][0] && gamefield[1][0] === gamefield[2][0]) {
+                    if (gamefield[0][0] === "X") {
+                        winner = "Player"
+                        fields = ["top-left","middle-left","bottom-left"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top-left","middle-left","bottom-left"]
+                    }
                 }
-            } else if (gamefield[0][1] === gamefield[1][1] && gamefield[1][1] === gamefield[2][1]) {
-                if (gamefield[0][1] === "X") {
-                    winner = "Player"
-                    fields = ["top","middle","bottom"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top","middle","bottom"]
+            } else if (gamefield[0][1] === "X" || gamefield[0][1] === "0") {//2nd column
+                if (gamefield[0][1] === gamefield[1][1] && gamefield[1][1] === gamefield[2][1]) {
+                    if (gamefield[0][1] === "X") {
+                        winner = "Player"
+                        fields = ["top","middle","bottom"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top","middle","bottom"]
+                    }
                 }
-            } else if (gamefield[0][2] === gamefield[1][2] && gamefield[1][2] === gamefield[2][2]) {
-                if (gamefield[0][2] === "X") {
-                    winner = "Player"
-                    fields = ["top-right","middle-right","bottom-right"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top-right","middle-right","bottom-right"]
+            } else if (gamefield[0][2] === "X" || gamefield[0][2] === "0") {//3rd column
+                if (gamefield[0][2] === gamefield[1][2] && gamefield[1][2] === gamefield[2][2]) {
+                    if (gamefield[0][2] === "X") {
+                        winner = "Player"
+                        fields = ["top-right","middle-right","bottom-right"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top-right","middle-right","bottom-right"]
+                    }
                 }
-            }
+              }
+
             //Checking Diagonally
-            if (gamefield[0][0] === gamefield[1][1] && gamefield[1][1] === gamefield[2][2]) {
-                if (gamefield[0][0] === "X") {
-                    winner = "Player"
-                    fields = ["top-left","middle","bottom-right"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top-left","middle","bottom-right"]
+            if (gamefield[0][0] === "X" || gamefield[0][0] === "0") {
+                if (gamefield[0][0] === gamefield[1][1] && gamefield[1][1] === gamefield[2][2]) {//Diagonal-1
+                    if (gamefield[0][0] === "X") {
+                        winner = "Player"
+                        fields = ["top-left","middle","bottom-right"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top-left","middle","bottom-right"]
+                    }
                 }
-            } else if (gamefield[0][2] === gamefield[1][1] && gamefield[1][1] === gamefield[0][2]) {
-                if (gamefield[0][2] === "X") {
-                    winner = "Player"
-                    fields = ["top-right","middle","bottom-left"]
-                } else {
-                    winner = "Computer"
-                    fields = ["top-right","middle","bottom-left"]
+            } else if (gamefield[0][2] === "X" || gamefield[0][2] === "0") {
+                if (gamefield[0][2] === gamefield[1][1] && gamefield[1][1] === gamefield[0][2]) {//Diagonal-2
+                    if (gamefield[0][2] === "X") {
+                        winner = "Player"
+                        fields = ["top-right","middle","bottom-left"]
+                    } else {
+                        winner = "Computer"
+                        fields = ["top-right","middle","bottom-left"]
+                    }
                 }
             }
         }
