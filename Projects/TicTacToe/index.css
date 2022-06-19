@@ -81,11 +81,17 @@ p {
     margin-top: 100px;
 }
 
-#winner {
+#message {
     text-align: center;
     color: darkred;
     margin-top: 250px;
     font-size: 150px;
+}
+
+#question {
+    padding-top: 100px;
+    color: black;
+    font-size: 50px;
 }
 
 

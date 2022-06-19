@@ -372,20 +372,19 @@ function declareWinner(playerturns,computerturns) {
 }
 
 function showWinnerOnPage(winner, fields) {
+    let tmp = ""
     document.getElementById(fields[0]).style.setProperty("background-color","green")
     document.getElementById(fields[1]).style.setProperty("background-color","green")
     document.getElementById(fields[2]).style.setProperty("background-color","green")
 
-    setTimeout(function () {
-        if (winner === "Player") {
-            window.location.href = "showwinner.html"
-            document.getElementById("winner").textContent = "You Win!"
+    window.location.href = "showwinner.html"
 
-        } else if (winner === "Computer") {
-            window.location.href = "showwinner.html"
-            document.getElementById("winner").textContent = "You Lose!"
-        }
-    },5000)
+    if (winner === "Player") {
+        tmp = "You Win!"
+    } else if (winner === "Computer") {
+        tmp = "You Lose!"
+    }
+    document.getElementById("message").textContent = tmp
 }
 
 function setSymbolOnPos(pos,symbol) {
