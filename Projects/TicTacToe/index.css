@@ -34,6 +34,22 @@ span {
     color: blue;
 }
 
+#title_of_page {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#img {
+    width: 900px;
+    height: 500px;
+}
+
+#explaination {
+    color: black;
+}
+
 button {
     border-radius: 50px;
     font-size: 28px;
@@ -42,6 +58,10 @@ button {
     color: red;
     background-color: orange;
     transition: 0.1s;
+}
+
+#yes-btn {
+    margin-right: 10px;
 }
 
 button:active {
