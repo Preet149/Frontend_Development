@@ -15,6 +15,10 @@ function returnToMainPage() {
     window.location.href = "mainpage.html"
 }
 
+function goToGameRulePage() {
+    window.location.href = "gamesrules.html"
+}
+
 function setCrossOnField() {
     let pos = document.getElementById("position").value
 
@@ -376,19 +380,17 @@ function declareWinner(playerturns,computerturns) {
 }
 
 function showWinnerOnPage(winner, fields) {
-    let tmp = ""
-    document.getElementById(fields[0]).style.setProperty("background-color","green")
-    document.getElementById(fields[1]).style.setProperty("background-color","green")
-    document.getElementById(fields[2]).style.setProperty("background-color","green")
-
-    window.location.href = "showwinner.html"
-
+    setInterval(function () {
+        document.getElementById(fields[0]).style.setProperty("background-color","green")
+        document.getElementById(fields[1]).style.setProperty("background-color","green")
+        document.getElementById(fields[2]).style.setProperty("background-color","green")
+        window.location.href = "showwinner.html"
+    },4000)
     if (winner === "Player") {
-        tmp = "You Win!"
+        document.getElementById("message").textContent = "You Win!"//Not working
     } else if (winner === "Computer") {
-        tmp = "You Lose!"
+        document.getElementById("message").textContent = "You Lose!"//Not working
     }
-    document.getElementById("message").textContent = tmp
 }
 
 function setSymbolOnPos(pos,symbol) {
